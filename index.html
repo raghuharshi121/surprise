@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>12 Gifts — A Surprise for Malisha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="starCanvas" class="canvas-top" aria-hidden="true"></canvas>
+  <canvas id="fireworksCanvas" class="canvas-top" aria-hidden="true"></canvas>
+
+  <main id="app">
+    <!-- SCREEN 1: Enter name + DOB -->
+    <section id="screen-enter" class="card visible">
+      <h1 class="logo">✨ A Small Universe of Journey by Raghu</h1>
+      <p class="lead">Enter your name and date of birth to start the surprise.</p>
+      <div class="form">
+        <input id="nameInput" type="text" placeholder="name" autocomplete="off" />
+        <input id="dobInput" type="date" />
+      </div>
+      <div class="actions">
+        <button id="startBtn" class="btn primary">Start Journey ✨</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: Congrats -->
+    <section id="screen-congrats" class="card hidden">
+      <h2 id="congratsTitle" class="title"></h2>
+      <p class="muted">You are about to unwrap a small journey — each a memory, a meaning, a surprise.</p>
+      <div class="actions">
+        <button id="toIntroBtn" class="btn outline">Click here to begin your journey 🌸</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: Poem intro -->
+    <section id="screen-intro" class="card hidden">
+      <h3 class="accent">🌟 The 12 Gifts of You & Me 🌟</h3>
+      <p class="poem">
+        Twelve gifts… for twelve precious years of knowing each other.<br>
+        Through moments near and times apart, our bond has only grown stronger.<br>
+        A bond of laughter, love, trust, and memories — unbroken, timeless, and forever ours.
+      </p>
+      <div class="actions">
+        <button id="beginGiftsBtn" class="btn primary">Start Now — Unwrap the first gift 💝</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 4: Gift viewer -->
+    <section id="screen-gift" class="card hidden">
+      <div class="gift-top">
+        <div>
+          <h2 id="giftTitle">Title</h2>
+          <div id="giftCounter" class="muted">1 / 12</div>
+        </div>
+        <div class="muted small-note">Hold your breath — each message will appear like a letter</div>
+      </div>
+
+      <div class="gift-body">
+        <figure class="img-wrap">
+          <img id="giftImage" alt="Gift image" src="" />
+        </figure>
+        <div class="msg-wrap">
+          <div id="typewriter" class="typewriter" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <button id="prevBtn" class="btn outline">◀ Prev</button>
+        <button id="nextBtn" class="btn primary" disabled>Next ▶</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 5: Final -->
+    <section id="screen-final" class="card hidden">
+      <h2 class="title">🎂 Happy Birthday, <span id="finalName"></span>!</h2>
+      <p class="lead">You are loved beyond words — from your Eternal Light.</p>
+      <div class="final-actions">
+        <button id="celebrateBtn" class="btn primary">Play & Celebrate ✨</button>
+        <button id="replayBtn" class="btn outline">Replay Journey</button>
+      </div>
+
+      <audio id="voiceWish" src="voice.mp3"></audio>
+      <audio id="cheer" src="cheer.mp3"></audio>
+      <audio id="bgMusic" src="bgmusic.mp3"></audio>
+    </section>
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+:root{
+    --accent1:#00f0ff;
+    --accent2:#8a2be2;
+    --muted:#ccc;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;overflow-x:hidden;}
+body{
+    font-family:"Poppins",sans-serif;
+    background:black;
+    color:white;
+}
+
+.canvas-top{
+    position:fixed;
+    left:0; top:0;
+    width:100%; height:100%;
+    z-index:999;
+    pointer-events:none;
+}
+
+#app{
+    max-width:700px;
+    margin:0 auto;
+    padding:20px;
+    position:relative;
+    z-index:10;
+}
+
+.card{
+    background:rgba(0,0,0,0.7);
+    border-radius:16px;
+    padding:30px 20px;
+    text-align:center;
+    margin-top:50px;
+    box-shadow:0 0 40px rgba(0,255,255,0.3);
+}
+.hidden{display:none;}
+.visible{display:block;}
+.logo{font-family:'Great Vibes',cursive;font-size:36px;color:#00f0ff;}
+.btn{
+    border:none;
+    border-radius:10px;
+    padding:10px 20px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:10px;
+    font-size:16px;
+}
+.btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;}
+.btn.outline{border:1px solid var(--accent1);background:transparent;color:var(--accent1);}
+.form{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px;}
+.form input{
+    padding:10px;
+    border-radius:10px;
+    border:none;
+    box-shadow:inset 0 1px 3px rgba(0,0,0,0.5);
+    background:#111;color:white;
+}
+
+.img-wrap{width:300px;height:300px;margin:auto;border-radius:12px;overflow:hidden;margin-top:20px;}
+.img-wrap img{width:100%;height:100%;object-fit:cover;border-radius:12px;}
+
+.typewriter{
+    background:rgba(0,0,0,0.5);
+    border-radius:12px;
+    padding:15px;
+    min-height:120px;
+    margin-top:15px;
+    color:#fff;
+    font-size:16px;
+    line-height:1.4;
+}
+
+.poem{font-style:italic;line-height:1.5;color:#fff;}
+.muted{color:#aaa;}
+.accent{color:#00f0ff;}
+.final-actions{margin-top:20px;}
+
+/* Cake animation */
+#cake{
+    position:fixed;
+    bottom:50px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1000;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    animation:popCake 1s ease-out forwards;
+}
+.cake-base{
+    width:120px;
+    height:80px;
+    background:linear-gradient(to top,#ff69b4,#ff1493);
+    border-radius:15px;
+    position:relative;
+}
+.candles{
+    display:flex;
+    gap:10px;
+    position:absolute;
+    top:-20px;
+}
+.candle{
+    width:10px;
+    height:20px;
+    background:yellow;
+    border-radius:3px;
+    animation:flicker 0.5s infinite alternate;
+}
+@keyframes flicker{
+    0%{opacity:1;}
+    50%{opacity:0.4;}
+    100%{opacity:1;}
+}
+@keyframes popCake{
+    0%{transform:translateX(-50%) scale(0);}
+    100%{transform:translateX(-50%) scale(1);}
+}
